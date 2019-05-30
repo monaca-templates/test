@@ -25,10 +25,10 @@
     return device;
   }
     
-  if (/^https:\/\/preview-.+monaca\.(local||mobi)/.test(location.href)) {
+  if (location && typeof location.href === "string" && /^https:\/\/preview-.+monaca\.(local||mobi)/.test(location.href)) {
     window.device = getDeviceObjectForPreview();
   }
- 
+
   if ((navigator.userAgent.match(/Android/i)) || (navigator.userAgent.match(/iPhone|iPad|iPod/i))) {
     if (typeof location.href === "string") {
       var relativePath = location.href.split("/www")[1];
@@ -47,21 +47,6 @@
 })();
 /*** <End:monaca-cordova-loader LoadJs:"components/monaca-cordova-loader/cordova-loader.js"> ***/
 /*** <End:monaca-cordova-loader> ***/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*** <Start:monaca-core-utils> ***/
 /*** <Start:monaca-core-utils LoadJs:"components/monaca-core-utils/monaca-core-utils.js"> ***/
